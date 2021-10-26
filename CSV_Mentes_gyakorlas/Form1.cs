@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace CSV_Mentes_gyakorlas
 {
@@ -47,6 +48,15 @@ namespace CSV_Mentes_gyakorlas
                  MacskaOsztaly macskaOsztaly = new MacskaOsztaly(textBox_MacskaNev.Text, textBox_MacskaNem.Text, DTP_Macska.Value);
                 listBox_Macska.Items.Add(textBox_MacskaNev.Text, textBox_MacskaNem.Text, DTP_Macska.Value);
             }
+        }
+
+        private void button_Mentes_Click(object sender, EventArgs e)
+        {
+            string macskafajl = @"c:\CSV teszt";
+            StreamWriter kimentes = new StreamWriter(macskafajl,true, Encoding.Default);
+            kimentes.Write(textBox_MacskaNev.Text , textBox_MacskaNem.Text, DTP_Macska.Value) ;
+            kimentes.Close();
+
         }
     }
 }

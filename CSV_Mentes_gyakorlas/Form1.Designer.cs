@@ -66,6 +66,7 @@ namespace CSV_Mentes_gyakorlas
             this.button_Mentes.TabIndex = 6;
             this.button_Mentes.Text = "Mentés";
             this.button_Mentes.UseVisualStyleBackColor = true;
+            this.button_Mentes.Click += new System.EventHandler(this.button_Mentes_Click);
             // 
             // button_UjKutya
             // 

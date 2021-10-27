@@ -30,19 +30,19 @@ namespace CSV_Mentes_gyakorlas
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button_Mentes = new System.Windows.Forms.Button();
             this.button_UjKutya = new System.Windows.Forms.Button();
             this.listBox_Kutya = new System.Windows.Forms.ListBox();
+            this.button_Mentes = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button_Torles = new System.Windows.Forms.Button();
+            this.DTP_Macska = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox_MacskaNem = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox_MacskaNev = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.button_UjMacska = new System.Windows.Forms.Button();
             this.listBox_Macska = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox_MacskaNev = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox_MacskaNem = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.DTP_Macska = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -57,16 +57,6 @@ namespace CSV_Mentes_gyakorlas
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Kutya";
-            // 
-            // button_Mentes
-            // 
-            this.button_Mentes.Location = new System.Drawing.Point(6, 376);
-            this.button_Mentes.Name = "button_Mentes";
-            this.button_Mentes.Size = new System.Drawing.Size(232, 23);
-            this.button_Mentes.TabIndex = 6;
-            this.button_Mentes.Text = "Mentés";
-            this.button_Mentes.UseVisualStyleBackColor = true;
-            this.button_Mentes.Click += new System.EventHandler(this.button_Mentes_Click);
             // 
             // button_UjKutya
             // 
@@ -86,6 +76,16 @@ namespace CSV_Mentes_gyakorlas
             this.listBox_Kutya.Name = "listBox_Kutya";
             this.listBox_Kutya.Size = new System.Drawing.Size(232, 139);
             this.listBox_Kutya.TabIndex = 4;
+            // 
+            // button_Mentes
+            // 
+            this.button_Mentes.Location = new System.Drawing.Point(6, 376);
+            this.button_Mentes.Name = "button_Mentes";
+            this.button_Mentes.Size = new System.Drawing.Size(232, 23);
+            this.button_Mentes.TabIndex = 6;
+            this.button_Mentes.Text = "Mentés";
+            this.button_Mentes.UseVisualStyleBackColor = true;
+            this.button_Mentes.Click += new System.EventHandler(this.button_Mentes_Click);
             // 
             // groupBox2
             // 
@@ -115,6 +115,56 @@ namespace CSV_Mentes_gyakorlas
             this.button_Torles.Text = "Törlés";
             this.button_Torles.UseVisualStyleBackColor = true;
             // 
+            // DTP_Macska
+            // 
+            this.DTP_Macska.Location = new System.Drawing.Point(8, 323);
+            this.DTP_Macska.MaxDate = new System.DateTime(2021, 10, 25, 0, 0, 0, 0);
+            this.DTP_Macska.Name = "DTP_Macska";
+            this.DTP_Macska.Size = new System.Drawing.Size(232, 23);
+            this.DTP_Macska.TabIndex = 13;
+            this.DTP_Macska.Value = new System.DateTime(2021, 10, 25, 0, 0, 0, 0);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 304);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(72, 15);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Születési idő";
+            // 
+            // textBox_MacskaNem
+            // 
+            this.textBox_MacskaNem.Location = new System.Drawing.Point(6, 274);
+            this.textBox_MacskaNem.Name = "textBox_MacskaNem";
+            this.textBox_MacskaNem.Size = new System.Drawing.Size(234, 23);
+            this.textBox_MacskaNem.TabIndex = 11;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 255);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(36, 15);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Nem ";
+            // 
+            // textBox_MacskaNev
+            // 
+            this.textBox_MacskaNev.Location = new System.Drawing.Point(6, 225);
+            this.textBox_MacskaNev.Name = "textBox_MacskaNev";
+            this.textBox_MacskaNev.Size = new System.Drawing.Size(234, 23);
+            this.textBox_MacskaNev.TabIndex = 9;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(8, 207);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(28, 15);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Név";
+            // 
             // button_UjMacska
             // 
             this.button_UjMacska.Location = new System.Drawing.Point(8, 177);
@@ -134,56 +184,6 @@ namespace CSV_Mentes_gyakorlas
             this.listBox_Macska.Size = new System.Drawing.Size(232, 139);
             this.listBox_Macska.TabIndex = 6;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 207);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(28, 15);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Név";
-            // 
-            // textBox_MacskaNev
-            // 
-            this.textBox_MacskaNev.Location = new System.Drawing.Point(6, 225);
-            this.textBox_MacskaNev.Name = "textBox_MacskaNev";
-            this.textBox_MacskaNev.Size = new System.Drawing.Size(234, 23);
-            this.textBox_MacskaNev.TabIndex = 9;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 255);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 15);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Nem ";
-            // 
-            // textBox_MacskaNem
-            // 
-            this.textBox_MacskaNem.Location = new System.Drawing.Point(6, 274);
-            this.textBox_MacskaNem.Name = "textBox_MacskaNem";
-            this.textBox_MacskaNem.Size = new System.Drawing.Size(234, 23);
-            this.textBox_MacskaNem.TabIndex = 11;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 304);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 15);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "Születési idő";
-            // 
-            // DTP_Macska
-            // 
-            this.DTP_Macska.Location = new System.Drawing.Point(8, 323);
-            this.DTP_Macska.MaxDate = new System.DateTime(2021, 10, 25, 0, 0, 0, 0);
-            this.DTP_Macska.Name = "DTP_Macska";
-            this.DTP_Macska.Size = new System.Drawing.Size(232, 23);
-            this.DTP_Macska.TabIndex = 13;
-            this.DTP_Macska.Value = new System.DateTime(2021, 10, 25, 0, 0, 0, 0);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -193,6 +193,7 @@ namespace CSV_Mentes_gyakorlas
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

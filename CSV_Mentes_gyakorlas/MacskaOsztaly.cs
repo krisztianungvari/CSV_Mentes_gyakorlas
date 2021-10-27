@@ -14,14 +14,29 @@ namespace CSV_Mentes_gyakorlas
 
         public MacskaOsztaly(string nev, string nem, DateTime szuletesNap)
         {
-            string Nev = nev;
-            string Nem = nem;
-            DateTime SzuletesNap = szuletesNap;
+            Nev = nev;
+            Nem = nem;
+            this.SzuletesNap = szuletesNap;
         }
 
         public string Nev { get => nev; set => nev = value; }
         public string Nem { get => nem; set => nem = value; }
-        public DateTime SzuletesNap { get => szuletesNap; set => szuletesNap = value; }
+        public DateTime SzuletesNap
+        {
+            get => szuletesNap;
+            set
+            {
+                if (DateTime.Compare(DateTime.Now, value) == 1)
+                {
+                    szuletesNap = value;
+                }
+                else
+                {
+                    throw new Exception("Nem jó a dátum!");
+                }
+            }
+        }
+                 
 
         public override string ToString()
         {

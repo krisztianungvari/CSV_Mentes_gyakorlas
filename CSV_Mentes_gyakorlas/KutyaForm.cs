@@ -38,6 +38,8 @@ namespace CSV_Mentes_gyakorlas
             {
 
                 KutyaOsztaly kutyaOsztaly = new KutyaOsztaly(textBox_Nev.Text, textBox_Nem.Text, dtp_Szuletesi_ido.Value);
+                Program.foablak.
+
                 
             }
         }

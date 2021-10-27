@@ -30,32 +30,48 @@ namespace CSV_Mentes_gyakorlas
         {
             if (string.IsNullOrEmpty(textBox_MacskaNev.Text))
             {
-                MessageBox.Show("Nincs kitöltve!", "HIBA!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Nincs megadva név!", "HIBA!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             else if (string.IsNullOrEmpty(textBox_MacskaNem.Text))
             {
-                MessageBox.Show("Nincs kitöltve!", "HIBA!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Nincs megadva a nem!", "HIBA!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            else if (DTP_Macska.MaxDate > DTP_Macska.Value)
+            /*
+            else if (DateTime.Compare(DTP_Macska.MaxDate,DTP_Macska.Value)!= 1)
             {
-                MessageBox.Show("Nincs kitöltve!", "HIBA!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Születési dátum nem jó!", "HIBA!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
-            }
+            } */
             else
             {
                  MacskaOsztaly macskaOsztaly = new MacskaOsztaly(textBox_MacskaNev.Text, textBox_MacskaNem.Text, DTP_Macska.Value);
-                listBox_Macska.Items.Add(textBox_MacskaNev.Text, textBox_MacskaNem.Text, DTP_Macska.Value);
+                // listBox_Macska.Items.Add(textBox_MacskaNev.Text, textBox_MacskaNem.Text, DTP_Macska.Value);
+                listBox_Macska.Items.Add(macskaOsztaly);
             }
         }
 
         private void button_Mentes_Click(object sender, EventArgs e)
         {
-            string macskafajl = @"c:\CSV teszt";
-            StreamWriter kimentes = new StreamWriter(macskafajl,true, Encoding.Default);
-            kimentes.Write(textBox_MacskaNev.Text , textBox_MacskaNem.Text, DTP_Macska.Value) ;
-            kimentes.Close();
+          //  string macskafajl = @"c:\CSV_teszt";
+            string macskafajl = "CSV_teszt.TXT";
+            // 
+            using (StreamWriter kimentes = new StreamWriter(macskafajl, true, Encoding.Default))
+            {
+                foreach (MacskaOsztaly item in listBox_Macska.Items)
+                {
+                    kimentes.Write(item.ToString());
+                }
+            }
+            
+            
+            
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
 
         }
     }

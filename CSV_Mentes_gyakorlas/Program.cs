@@ -8,7 +8,7 @@ namespace CSV_Mentes_gyakorlas
 {
     static class Program
     {
-        public static Form foablak = null;
+        public static Form1 foablak = null;
         [STAThread]
         static void Main()
         {

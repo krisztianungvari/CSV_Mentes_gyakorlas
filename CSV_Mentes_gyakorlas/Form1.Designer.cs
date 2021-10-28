@@ -114,6 +114,7 @@ namespace CSV_Mentes_gyakorlas
             this.button_Torles.TabIndex = 8;
             this.button_Torles.Text = "Törlés";
             this.button_Torles.UseVisualStyleBackColor = true;
+            this.button_Torles.Click += new System.EventHandler(this.button_Torles_Click);
             // 
             // DTP_Macska
             // 
@@ -193,7 +194,6 @@ namespace CSV_Mentes_gyakorlas
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

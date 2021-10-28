@@ -47,19 +47,18 @@ namespace CSV_Mentes_gyakorlas
             else
             {
                  MacskaOsztaly macskaOsztaly = new MacskaOsztaly(textBox_MacskaNev.Text, textBox_MacskaNem.Text, DTP_Macska.Value);
-                // listBox_Macska.Items.Add(textBox_MacskaNev.Text, textBox_MacskaNem.Text, DTP_Macska.Value);
                 listBox_Macska.Items.Add(macskaOsztaly);
             }
         }
 
         private void button_Mentes_Click(object sender, EventArgs e)
         {
-          //  string macskafajl = @"c:\CSV_teszt";
-            string macskafajl = "CSV_teszt.TXT";
+          //  string macskafajl = @"c:\CSV_teszt"; itt én mondom meg hova mentse
+            string macskafajl = "CSV_teszt.TXT"; // itt a "felhasználó" a program mellé ment
             // 
             using (StreamWriter kimentes = new StreamWriter(macskafajl, true, Encoding.Default))
             {
-                foreach (MacskaOsztaly item in listBox_Macska.Items)
+                foreach (MacskaOsztaly item in listBox_Macska.Items) //foreach mert végig megy a listboxon, hogy annak a tartalmát kimentse, ne csak 1 sort!
                 {
                     kimentes.Write(item.ToString());
                 }
@@ -70,9 +69,21 @@ namespace CSV_Mentes_gyakorlas
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void button_Torles_Click(object sender, EventArgs e)
         {
+            if (listBox_Macska.SelectedIndex != -1)
+            {
+                if (MessageBox.Show("Biztosan szeretné törölni a macskát?", "Törlés", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                {
+                    listBox_Macska.Items.RemoveAt(listBox_Macska.SelectedIndex);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Jelöljön ki egy macskát!", "Hiba", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
+                
         }
     }
 }

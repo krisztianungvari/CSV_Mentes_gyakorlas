@@ -29,18 +29,16 @@ namespace CSV_Mentes_gyakorlas
                 MessageBox.Show("Nincs kitöltve!", "HIBA!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            else if (dtp_Szuletesi_ido.MaxDate > dtp_Szuletesi_ido.Value)
+            else if (DateTime.Compare(dtp_Szuletesi_ido.MaxDate, dtp_Szuletesi_ido.Value) != 1)
             {
-                MessageBox.Show("Nincs kitöltve!", "HIBA!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Születési dátum nem jó!", "HIBA!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             else
             {
 
                 KutyaOsztaly kutyaOsztaly = new KutyaOsztaly(textBox_Nev.Text, textBox_Nem.Text, dtp_Szuletesi_ido.Value);
-                Program.foablak.
-
-                
+                Program.foablak.listBox_Kutya.Items.Add(kutyaOsztaly);
             }
         }
     }
